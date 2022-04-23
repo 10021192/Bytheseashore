@@ -2,8 +2,8 @@ async function getTiles() {
     try {
         const response = await fetch(`/api/tile`);
         if (response.status == 200) {
-           var cards = await response.json();
-           return cards;
+           var tiles = await response.json();
+           return tiles;
         } else {
             // Treat errors like 404 here
             console.log(response);
