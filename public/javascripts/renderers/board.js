@@ -5,20 +5,18 @@ const cardmsg = 'progress'
 //const player2msg = 'p2 turn'
 
 class Board {
-    constructor(width,height,x,y,topCard, playValues) {
+    constructor(width,height,x,y,playValues) {
         this.width = width;
         this.height = height;
         this.x = x;
         this.y = y;
         this.msg = Msg;
         let nCards = 1+playValues.length;
-        let nTiles = 
-        this.DeckWidth = width/(nCards+cardSpaceToBorder*2+spaceBetweenCards);
-        this.DeckHeight = height-topSpace-bottomSpace;
-        this.roomDeck = new Card(this.cardWidth,this.cardHeight,
-                                 x+this.cardWidth*cardSpaceToBorder,
-                                 y+topSpace,
-                                 topCard);
+       // let nTiles = 
+        this.CardWidth = width
+        this.CardHeight = height
+        this.Card = new Card(this.cardWidth,this.cardHeight,
+                                 x+this.cardWidth);
         this.cardValues = [];
         for (let pos in playValues) {
             this.cardValues.push(new Card(this.cardWidth,this.cardHeight,
@@ -40,19 +38,19 @@ class Board {
 
 
     draw() {
-        this.roomCard.draw();
+        this.Card.draw();
         for (let card of this.cardValues) {
             card.draw();
         }
         // text
-        fill(0,0,0);
+       /* fill(0,0,0);
         textAlign(CENTER,CENTER);
         text(topcardLabel, this.x+this.cardWidth*cardSpaceToBorder+this.cardWidth/2, 
             this.y+topSpace/2);
         text(valuesLabel, this.x+this.cardWidth*cardSpaceToBorder+
                 this.cardWidth*spaceBetweenCards+this.cardWidth+
                 (this.cardValues.length*this.cardWidth)/2, this.y+topSpace/2);
-        text(this.msg, this.x+this.width/2, this.y+this.height-bottomSpace/2);
+        text(this.msg, this.x+this.width/2, this.y+this.height-bottomSpace/2); */
     }
 
     valueClicked(x,y) {
@@ -61,10 +59,10 @@ class Board {
         return false;
     }    
     roomCardClicked(x,y) {
-        return this.roomCard.clicked(x,y);
+        return this.Card.clicked(x,y);
     }
     setRoomCard(card) {
-        this.roomCard.setCard(card);
+        this.Card.setCard(card);
     }
     /*resetMsg() { this.msg = baseMsg; }
     setResult(win) {

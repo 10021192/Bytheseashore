@@ -1,6 +1,6 @@
 class Tile {
     //static cardImages = {};
-    constructor(width,height,x,y,card) {
+    constructor(width,height,x,y,tile) {
         this.width = width;
         this.height = height;
         this.x = x;
@@ -25,8 +25,8 @@ class Tile {
             text(this.card,this.x+this.width/2,this.y+this.height*textCenterVertical);
         }*/
     }
-    setCard(card) { this.card = card; }
-    getCard() { return this.card; }
+    setTile(tile) { this.tile = tile; }
+    getTile() { return this.tile; }
     clicked(x,y) {
         return (x > this.x && x < (this.x+this.width) &&
             y > this.y && y < (this.y+this.height));

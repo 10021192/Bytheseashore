@@ -1,4 +1,4 @@
-/*class Card {
+class Card {
     static cardImages = {};
     constructor(width,height,x,y,card) {
         this.width = width;
@@ -12,8 +12,8 @@
         fill(255,153,51);  
         stroke('black');
         strokeWeight(4);     
-        rect (this.x,this.y,this.width,this.height,50, 50, 30, 50)
-        if (this.card) {
+        rect (this.x,this.y,this.width,this.height,10, 10, 5, 10)
+        /*if (this.card) {
             imageMode(CENTER);
             let img = Card.cardImages[this.card];  
             let ratio = (this.width*imgRelWidth)/img.width;
@@ -23,7 +23,7 @@
             fill(0,0,0);
             textAlign(CENTER,CENTER);
             text(this.card,this.x+this.width/2,this.y+this.height*textCenterVertical);
-        }
+        }*/
     }
     setCard(card) { this.card = card; }
     getCard() { return this.card; }
@@ -32,4 +32,3 @@
             y > this.y && y < (this.y+this.height));
     }
 }
-*/

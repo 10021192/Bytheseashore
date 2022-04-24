@@ -1,4 +1,4 @@
-/*var express = require('express');
+var express = require('express');
 var router = express.Router();
 var cModel = require("../models/cardsModel");
             
@@ -8,4 +8,4 @@ router.get('/', async function(req, res, next) {
     res.status(result.status).send(result.result);
 });
 
-module.exports = router;*/
+module.exports = router;

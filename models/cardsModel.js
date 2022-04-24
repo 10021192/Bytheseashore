@@ -1,4 +1,4 @@
-/*var pool = require('./connection.js')
+var pool = require('./connection.js')
 
 module.exports.getAllCards = async function () {
     try {
@@ -10,4 +10,4 @@ module.exports.getAllCards = async function () {
       console.log(err);
       return { status: 500, result: err };
     }
-  }*/
+  }

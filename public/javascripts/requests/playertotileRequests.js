@@ -1,9 +1,9 @@
 async function getPlayersonTiles() {
     try {
-        const response = await fetch(`/api/playerontile`);
+        const response = await fetch(`/api/playertotile`);
         if (response.status == 200) {
-           var cards = await response.json();
-           return cards;
+           var playerpositions = await response.json();
+           return playerpositions;
         } else {
             // Treat errors like 404 here
             console.log(response);

@@ -1,4 +1,4 @@
-/*async function getCards() {
+async function getCards() {
     try {
         const response = await fetch(`/api/card`);
         if (response.status == 200) {
@@ -12,4 +12,4 @@
         // Treat 500 errors here
         console.log(err);
     }
-}*/
+}

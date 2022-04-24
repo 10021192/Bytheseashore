@@ -1,16 +1,18 @@
-const width = 1000;
-const height = 400;
-const room = 1;
+const width = 1400;
+const height = 800;
 
 var boardMan;
 
-function preload() {
+/*function preload() {
     BoardManager.preloadImages();
-    boardMan = new BoardManager(width,height,0,0,room);
+    boardMan = new BoardManager(width,height,0,0);
     boardMan.initBoard();
-}
+}*/
 
 function setup() {
+    //BoardManager.preloadImages();
+    boardMan = new BoardManager(width,height,0,0);
+    boardMan.initBoard();
     var canvas = createCanvas(width, height);
     canvas.parent('game');
 }
