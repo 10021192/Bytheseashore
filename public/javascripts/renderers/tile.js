@@ -12,7 +12,7 @@ class Tile {
         fill(204,0,0);  
         stroke('black');
         strokeWeight(4);     
-        rect (this.x,this.y,this.width,this.height,50, 50, 30, 30)
+        rect (this.x,this.y,this.width,this.height,5, 5, 5, 5)
         /*if (this.card) {
             imageMode(CENTER);
             let img = Card.cardImages[this.card];  
