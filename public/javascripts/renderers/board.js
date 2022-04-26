@@ -1,16 +1,38 @@
 const dicemsg = '2'
 const cardmsg = 'progress'
+const tilePositions= {
+1:[150, 100], 2:[155, 150], 3:[160, 200]
+
+}
 /*maybe add a message about card position on hand and explain that*/
 //const player1msg = 'p1 turn'
 //const player2msg = 'p2 turn'
 
+/*
+let x = 100
+let y = 100
+let width = 1000
+let height = 600
+*/
+
+
 class Board {
-    constructor(width,height,x,y,playValues) {
+    constructor(width,height,x,y,board) {
         this.width = width;
         this.height = height;
         this.x = x;
         this.y = y;
-        this.msg = Msg;
+        this.board = board;
+       
+        for (var i = 0; i < tilePositions.length; i++) {
+            let tmpCoord = tilePositions[i]
+            this.tile = new TileGrid(tmpCoord[0], tmpCoord[1],r)
+            console.log(err);
+        }
+
+
+    
+       /* this.msg = Msg;
         let nCards = 1+playValues.length;
        // let nTiles = 
         this.CardWidth = width
@@ -33,15 +55,43 @@ class Board {
                 this.cardWidth*spaceBetweenCards+pos*this.cardWidth,
                 y+topSpace,
                playValues[pos]));
-        }
+        }*/
     }         
 
 
     draw() {
-        this.Card.draw();
+        // board
+        noFill();  
+        stroke('red');
+        strokeWeight(10);     
+        rect (this.x,this.y,this.width,this.height)
+        // P1 spawn boat
+        fill(153,76,0);  
+        stroke('black');
+        strokeWeight(4);     
+        rect (20,60,60,90,20)
+        //P2 spawn boat
+        fill(153,76,0);  
+        stroke('black');
+        strokeWeight(4);     
+        rect (1520,660,60,90,20)
+        // treasure 
+        fill(153,76,0);  
+        stroke('black');
+        strokeWeight(4);     
+        rect (800,360,50,50,20)
+        
+        if (this.tile) this.tile.draw();
+        
+      /*  this.tile.draw();
+        for (let tile of this.cardValues) {
+            card.draw();
+        }*/
+
+        /*this.Card.draw();
         for (let card of this.cardValues) {
             card.draw();
-        }
+        }*/
         // text
        /* fill(0,0,0);
         textAlign(CENTER,CENTER);

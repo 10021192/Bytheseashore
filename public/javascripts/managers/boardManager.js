@@ -19,28 +19,25 @@ class BoardManager {
         Card.initImgs(cardImgs);
     }*/
 
-    async initBoard() {
-        this.board = new Board(this.width,this.height,this.x,this.y,
-                 playValues);   
+      async initBoard() {
+        //let canvas = await getCanvas(this.canvas);
+        this.board = new Board(this.width,this.height,this.x,this.y);
     }
     draw() { 
-        if (this.board) this.board.draw(); 
+        if (this.board) this.board.draw();
     }
-   /* async refresh () {
-        let room = await getRoom(this.room);
-        this.board.setRoomCard(room.roo_topcard);
-    }
+   /*
     async play(value) {
         let result = await play(this.room, value);
         this.board.setResult(result.victory);
         this.board.setRoomCard(result.current_topcard);
     }*/
-   /* async click(x,y) {
-        if (this.board.roomCardClicked(x,y)) {
+    async click(x,y) {
+        if (this.board.CardClicked(x,y)) {
             this.refresh();
         } else {
             let value = this.board.valueClicked(x,y);
             if (value) this.play(value);
         }
-    }*/
+    }
 }

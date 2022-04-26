@@ -1,24 +1,24 @@
-const width = 1400;
+const width = 1600;
 const height = 800;
 
 var boardMan;
 
 /*function preload() {
-    BoardManager.preloadImages();
-    boardMan = new BoardManager(width,height,0,0);
+    boardMan = new BoardManager(width.height,0,0);
     boardMan.initBoard();
 }*/
 
 function setup() {
-    //BoardManager.preloadImages();
-    boardMan = new BoardManager(width,height,0,0);
-    boardMan.initBoard();
-    var canvas = createCanvas(width, height);
+    var canvas = createCanvas(width, height,0,0);
     canvas.parent('game');
+    
 }
 function draw() {
-    background(220);
+    background('cyan');
+    boardMan = new BoardManager(1400,700,100,50);
+    boardMan.initBoard();
     boardMan.draw();
+    setInterval(draw, 2000);
 }
 function mouseClicked() {
     boardMan.click(mouseX,mouseY);     
