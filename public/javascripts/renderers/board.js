@@ -23,10 +23,10 @@ class Board {
         this.x = x;
         this.y = y;
         this.board = board;
-       
+        this.tiles = [];     
         for (var i = 0; i < tilePositions.length; i++) {
             let tmpCoord = tilePositions[i]
-            this.tile = new TileGrid(tmpCoord[0], tmpCoord[1],r)
+            this.tile.push( new TileGrid(tmpCoord[0], tmpCoord[1],30));
             console.log(err);
         }
 
@@ -81,7 +81,8 @@ class Board {
         strokeWeight(4);     
         rect (800,360,50,50,20)
         
-        if (this.tile) this.tile.draw();
+        for (var i = 0; i < this.tiles.length; i++) 
+         this.tiles[i].draw();
         
       /*  this.tile.draw();
         for (let tile of this.cardValues) {

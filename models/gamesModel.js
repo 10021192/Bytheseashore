@@ -42,6 +42,7 @@ module.exports.getMatchById = async function (id) {
         where room.roo_id = $1 and
         room.roo_topcard_id = card.crd_winsover_id 
         and card.crd_name ILIKE $2;`
+        
 
         'select * from matches,'
 
